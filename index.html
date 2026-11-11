@@ -1,0 +1,1680 @@
+<!-- ... eslint-disable -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>3兄弟紀錄</title>
+  <!-- Mobile Standalone & PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="3兄弟紀錄" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#f97316" />
+  <!-- Inline SVG 3-Cat App Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23fb923c'/%3E%3Cstop offset='100%25' stop-color='%23f43f5e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23bg)'/%3E%3C!-- Left Cat (傻豹) --%3E%3Cpolygon points='14,46 18,24 34,36' fill='%23fde68a'/%3E%3Cpolygon points='34,36 44,24 46,46' fill='%23fde68a'/%3E%3Ccircle cx='30' cy='50' r='16' fill='%23fde68a'/%3E%3Ccircle cx='24' cy='48' r='2.2' fill='%23451a03'/%3E%3Ccircle cx='35' cy='48' r='2.2' fill='%23451a03'/%3E%3Cpolygon points='28,52 31,52 29.5,54.5' fill='%23f97316'/%3E%3C!-- Right Cat (牛牛) --%3E%3Cpolygon points='54,46 56,24 66,36' fill='%23e0e7ff'/%3E%3Cpolygon points='66,36 82,24 86,46' fill='%23e0e7ff'/%3E%3Ccircle cx='70' cy='50' r='16' fill='%23e0e7ff'/%3E%3Ccircle cx='65' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Ccircle cx='76' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Cpolygon points='69,52 72,52 70.5,54.5' fill='%236366f1'/%3E%3C!-- Center Cat (豬仔包) --%3E%3Cpolygon points='30,62 34,36 48,48' fill='%23ffffff'/%3E%3Cpolygon points='52,48 66,36 70,62' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='64' r='20' fill='%23ffffff'/%3E%3Ccircle cx='42' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='58' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='38' cy='66' r='3' fill='%23fbcfe8'/%3E%3Ccircle cx='62' cy='66' r='3' fill='%23fbcfe8'/%3E%3Cpolygon points='48,66 52,66 50,69' fill='%23f472b6'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23fb923c'/%3E%3Cstop offset='100%25' stop-color='%23f43f5e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23bg)'/%3E%3Cpolygon points='14,46 18,24 34,36' fill='%23fde68a'/%3E%3Cpolygon points='34,36 44,24 46,46' fill='%23fde68a'/%3E%3Ccircle cx='30' cy='50' r='16' fill='%23fde68a'/%3E%3Ccircle cx='24' cy='48' r='2.2' fill='%23451a03'/%3E%3Ccircle cx='35' cy='48' r='2.2' fill='%23451a03'/%3E%3Cpolygon points='28,52 31,52 29.5,54.5' fill='%23f97316'/%3E%3Cpolygon points='54,46 56,24 66,36' fill='%23e0e7ff'/%3E%3Cpolygon points='66,36 82,24 86,46' fill='%23e0e7ff'/%3E%3Ccircle cx='70' cy='50' r='16' fill='%23e0e7ff'/%3E%3Ccircle cx='65' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Ccircle cx='76' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Cpolygon points='69,52 72,52 70.5,54.5' fill='%236366f1'/%3E%3Cpolygon points='30,62 34,36 48,48' fill='%23ffffff'/%3E%3Cpolygon points='52,48 66,36 70,62' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='64' r='20' fill='%23ffffff'/%3E%3Ccircle cx='42' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='58' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='38' cy='66' r='3' fill='%23fbcfe8'/%3E%3Ccircle cx='62' cy='66' r='3' fill='%23fbcfe8'/%3E%3Cpolygon points='48,66 52,66 50,69' fill='%23f472b6'/%3E%3C/svg%3E" />
+  <!-- Dynamic Web App Manifest -->
+  <script>
+    (function() {
+      const iconSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23fb923c'/%3E%3Cstop offset='100%25' stop-color='%23f43f5e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23bg)'/%3E%3Cpolygon points='14,46 18,24 34,36' fill='%23fde68a'/%3E%3Cpolygon points='34,36 44,24 46,46' fill='%23fde68a'/%3E%3Ccircle cx='30' cy='50' r='16' fill='%23fde68a'/%3E%3Ccircle cx='24' cy='48' r='2.2' fill='%23451a03'/%3E%3Ccircle cx='35' cy='48' r='2.2' fill='%23451a03'/%3E%3Cpolygon points='28,52 31,52 29.5,54.5' fill='%23f97316'/%3E%3Cpolygon points='54,46 56,24 66,36' fill='%23e0e7ff'/%3E%3Cpolygon points='66,36 82,24 86,46' fill='%23e0e7ff'/%3E%3Ccircle cx='70' cy='50' r='16' fill='%23e0e7ff'/%3E%3Ccircle cx='65' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Ccircle cx='76' cy='48' r='2.2' fill='%231e1b4b'/%3E%3Cpolygon points='69,52 72,52 70.5,54.5' fill='%236366f1'/%3E%3Cpolygon points='30,62 34,36 48,48' fill='%23ffffff'/%3E%3Cpolygon points='52,48 66,36 70,62' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='64' r='20' fill='%23ffffff'/%3E%3Ccircle cx='42' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='58' cy='62' r='2.6' fill='%23334155'/%3E%3Ccircle cx='38' cy='66' r='3' fill='%23fbcfe8'/%3E%3Ccircle cx='62' cy='66' r='3' fill='%23fbcfe8'/%3E%3Cpolygon points='48,66 52,66 50,69' fill='%23f472b6'/%3E%3C/svg%3E";
+      const manifest = {
+        name: "3兄弟紀錄",
+        short_name: "3兄弟紀錄",
+        start_url: ".",
+        display: "standalone",
+        background_color: "#F8FAFC",
+        theme_color: "#f97316",
+        icons: [
+          {
+            src: iconSvg,
+            sizes: "192x192",
+            type: "image/svg+xml",
+            purpose: "any maskable"
+          },
+          {
+            src: iconSvg,
+            sizes: "512x512",
+            type: "image/svg+xml",
+            purpose: "any maskable"
+          }
+        ]
+      };
+      const blob = new Blob([JSON.stringify(manifest)], { type: "application/manifest+json" });
+      const manifestLink = document.createElement("link");
+      manifestLink.rel = "manifest";
+      manifestLink.href = URL.createObjectURL(blob);
+      document.head.appendChild(manifestLink);
+    })();
+  </script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts: Inter & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scrollbar-gutter: stable;
+      font-size: 100%;
+    }
+    @media (min-width: 640px) {
+      html {
+        font-size: 112%;
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Noto Sans TC', sans-serif;
+      font-variant-numeric: tabular-nums;
+      padding-bottom: env(safe-area-inset-bottom);
+      background-color: #F2F3F7;
+      background-image:
+        radial-gradient(at 0% 0%, rgba(255, 224, 194, 0.35) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(196, 230, 255, 0.35) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 219, 236, 0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(214, 235, 255, 0.3) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+    /* iOS 27 Ultra Liquid Glass Styling */
+    .ios-glass {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.48));
+      backdrop-filter: blur(40px) saturate(160%);
+      -webkit-backdrop-filter: blur(40px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.85), inset 0 -1px 1px rgba(255, 255, 255, 0.35);
+    }
+    .ios-glass-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.36));
+      backdrop-filter: blur(48px) saturate(180%);
+      -webkit-backdrop-filter: blur(48px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 32px -10px rgba(15, 23, 42, 0.06), inset 0 1.5px 2px rgba(255, 255, 255, 0.92), inset 0 -1px 2px rgba(255, 255, 255, 0.35);
+    }
+    .frosted-pill {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.28));
+      backdrop-filter: blur(24px) saturate(165%);
+      -webkit-backdrop-filter: blur(24px) saturate(165%);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow: 0 4px 12px -4px rgba(15, 23, 42, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+    }
+    /* iOS 27 Liquid Glass Pastel Button Styles (柔和低對比) */
+    .ios-btn-amber {
+      background: linear-gradient(135deg, rgba(252, 211, 77, 0.72), rgba(245, 180, 60, 0.72));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      color: #784818;
+      padding: 0.875rem 1.75rem;
+    }
+    .ios-btn-sky {
+      background: linear-gradient(135deg, rgba(125, 211, 252, 0.72), rgba(56, 189, 248, 0.72));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 8px 20px -4px rgba(14, 165, 233, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      color: #1e4e68;
+      padding: 0.875rem 1.75rem;
+    }
+    .ios-btn-stone {
+      background: linear-gradient(135deg, rgba(168, 162, 158, 0.9), rgba(120, 113, 108, 0.9));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 28px -4px rgba(120, 113, 108, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+      color: #292524;
+      padding: 0.875rem 1.75rem;
+    }
+    .ios-btn-purple {
+      background: linear-gradient(135deg, rgba(192, 132, 252, 0.9), rgba(168, 85, 247, 0.9));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 28px -4px rgba(168, 85, 247, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+      color: #581c87;
+      padding: 0.875rem 1.75rem;
+    }
+    .ios-btn-emerald {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.9), rgba(16, 185, 129, 0.9));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 28px -4px rgba(16, 185, 129, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+      color: #064e3b;
+      padding: 0.875rem 1.75rem;
+    }
+    .btn-press {
+      transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-press:active {
+      transform: scale(0.95);
+    }
+    /* 自訂捲軸 */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.45);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.65);
+    }
+  </style>
+</head>
+<body class="text-slate-700 antialiased min-h-screen flex flex-col justify-between selection:bg-sky-200/50">
+
+  <!-- 頂部導覽列 (iOS 27 Liquid Glass) -->
+  <header class="sticky top-0 z-40 ios-glass border-b border-white/60 pt-[env(safe-area-inset-top)]">
+    <div class="max-w-5xl mx-auto px-3 py-2.5 flex flex-col gap-2">
+      
+      <!-- 第一行：左上角圖示與標題、右上角日期按鈕 -->
+      <div class="flex items-center justify-between w-full gap-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-orange-300/90 to-rose-400/90 flex items-center justify-center shadow-sm border border-white/50 shrink-0 overflow-hidden p-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
+              <!-- Left Cat (傻豹) -->
+              <polygon points="10,46 14,20 32,34" fill="#fde68a"/>
+              <polygon points="32,34 44,20 46,46" fill="#fde68a"/>
+              <circle cx="28" cy="50" r="17" fill="#fde68a"/>
+              <circle cx="22" cy="48" r="2.4" fill="#451a03"/>
+              <circle cx="33" cy="48" r="2.4" fill="#451a03"/>
+              <polygon points="26,52 30,52 28,55" fill="#f97316"/>
+              <!-- Right Cat (牛牛) -->
+              <polygon points="54,46 56,20 68,34" fill="#e0e7ff"/>
+              <polygon points="68,34 86,20 90,46" fill="#e0e7ff"/>
+              <circle cx="72" cy="50" r="17" fill="#e0e7ff"/>
+              <circle cx="67" cy="48" r="2.4" fill="#1e1b4b"/>
+              <circle cx="78" cy="48" r="2.4" fill="#1e1b4b"/>
+              <polygon points="70,52 74,52 72,55" fill="#6366f1"/>
+              <!-- Center Cat (豬仔包) -->
+              <polygon points="28,64 32,35 48,48" fill="#ffffff"/>
+              <polygon points="52,48 68,35 72,64" fill="#ffffff"/>
+              <circle cx="50" cy="66" r="21" fill="#ffffff"/>
+              <circle cx="42" cy="64" r="2.8" fill="#334155"/>
+              <circle cx="58" cy="64" r="2.8" fill="#334155"/>
+              <circle cx="37" cy="68" r="3.2" fill="#fbcfe8"/>
+              <circle cx="63" cy="68" r="3.2" fill="#fbcfe8"/>
+              <polygon points="48,68 52,68 50,71" fill="#f472b6"/>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h1 class="text-xl sm:text-3xl font-extrabold tracking-tight text-slate-700 leading-tight truncate">3兄弟紀錄</h1>
+            <p class="text-[11px] text-slate-500 font-semibold truncate">傻豹 🐾 豬仔包 🐾 牛牛</p>
+          </div>
+        </div>
+
+        <!-- 日期選擇器 (右上角) -->
+        <div class="flex items-center gap-1 bg-white/75 backdrop-blur-md px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-full border border-white/80 shadow-sm text-xs sm:text-sm font-extrabold text-slate-800 shrink-0">
+          <span class="text-sm sm:text-base">📅</span>
+          <input type="date" id="date-picker" class="bg-transparent focus:outline-none cursor-pointer text-xs sm:text-sm" />
+        </div>
+      </div>
+
+      <!-- 第二行：分頁切換按鈕群組 -->
+      <nav id="cat-tabs" class="flex items-center justify-center gap-1.5 sm:gap-2 bg-slate-200/65 backdrop-blur-md p-1 sm:p-1.5 rounded-2xl border border-white/65 w-full max-w-2xl mx-auto shadow-inner">
+        <button type="button" onclick="switchTab('overview')" data-tab="overview" class="tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap bg-white text-slate-900 shadow-md cursor-pointer">
+          📊 總覽
+        </button>
+        <button type="button" onclick="switchTab('shabao')" data-tab="shabao" class="tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap text-slate-700 hover:text-slate-900 cursor-pointer">
+          🐆 傻豹
+        </button>
+        <button type="button" onclick="switchTab('zhuzibao')" data-tab="zhuzibao" class="tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap text-slate-700 hover:text-slate-900 cursor-pointer">
+          🐷 豬仔包
+        </button>
+        <button type="button" onclick="switchTab('niuniu')" data-tab="niuniu" class="tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap text-slate-700 hover:text-slate-900 cursor-pointer">
+          🐮 牛牛
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main class="max-w-5xl mx-auto px-2.5 py-3 w-full flex-1 space-y-3">
+
+    <!-- 總覽視圖 -->
+    <section id="overview-view" class="space-y-3">
+
+      <!-- 每日總出糧統計與快速紀錄 -->
+      <div class="ios-glass-card rounded-[22px] p-3.5 sm:p-4 space-y-2.5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div class="space-y-0.5">
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-800 flex items-center gap-2">
+              <span>🌾</span><span>今日總加糧統計</span>
+            </h3>
+            <div id="overview-dryfood-summary" class="text-sm sm:text-base text-slate-600 font-medium">
+              今日總計：<span class="font-bold text-amber-600">0g</span>（共 0 次）
+            </div>
+          </div>
+          <button id="btn-overview-add-dryfood" type="button" class="btn-press px-5 py-2.5 rounded-2xl ios-btn-amber hover:brightness-105 font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer shadow-md">
+            <span>🌾</span><span>加糧</span>
+          </button>
+        </div>
+        <!-- 今日加糧明細 -->
+        <div id="overview-dryfood-list" class="space-y-1.5 pt-2 border-t border-white/60"></div>
+      </div>
+      <!-- 大便未紀錄提示橫幅 -->
+      <div id="bathroom-reminder-banner" class="rounded-[20px] p-3 shadow-sm border transition-all backdrop-blur-md text-sm sm:text-base font-semibold"></div>
+
+      <!-- 三貓今日數據總覽 -->
+      <div class="space-y-2 pt-1">
+        <div class="flex items-center justify-between px-1">
+          <h3 class="text-lg sm:text-xl font-extrabold text-slate-800 flex items-center gap-2">
+            <span>🎨</span><span>三貓今日數據總覽</span>
+          </h3>
+          <span class="text-[11px] sm:text-xs text-slate-500 font-medium">點擊各項數據可直接編輯</span>
+        </div>
+
+        <div id="overview-cards" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5"></div>
+      </div>
+
+    </section>
+
+    <!-- 單隻貓咪詳細視圖 (傻豹 / 豬仔包 / 牛牛) -->
+    <section id="cat-view" class="hidden space-y-3">
+      
+      <!-- 貓咪頂部資訊卡 -->
+      <div id="cat-header-card" class="rounded-[22px] p-4 text-white shadow-xl border border-white/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-3.5">
+          <div id="cat-header-emoji" class="text-4xl bg-white/25 p-3 rounded-2xl backdrop-blur-md border border-white/30">🐆</div>
+          <div>
+            <h2 id="cat-header-name" class="text-xl sm:text-2xl font-extrabold tracking-tight">傻豹</h2>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="bg-white/20 px-3.5 py-2.5 rounded-2xl backdrop-blur-md border border-white/25 text-xs sm:text-sm font-semibold">
+            今日狀態：<span id="cat-header-status">一切正常 ✨</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 數據統計卡片與直接加減按鈕整合 (項目標題大字、次數在上方、按鈕在右上角) -->
+      <div class="grid grid-cols-1 gap-2.5">
+        
+        <!-- 第一行：小便與大便 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          
+          <!-- 1. 小便項目 -->
+          <div class="ios-glass-card rounded-[22px] p-4 flex flex-col justify-between gap-3">
+            <div class="flex items-center justify-between">
+              <div class="text-lg sm:text-xl font-extrabold text-sky-900">小便</div>
+              <button id="btn-log-pee" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-sky-200/60 hover:bg-sky-200/90 border border-sky-300/70 text-sky-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer backdrop-blur-md shadow-xs transition">
+                <span>💧</span><span>紀錄</span>
+              </button>
+            </div>
+            <div id="stat-pee-count" class="text-2xl sm:text-3xl font-extrabold text-sky-600">0 次</div>
+          </div>
+
+          <!-- 2. 大便項目 -->
+          <div class="ios-glass-card rounded-[22px] p-4 flex flex-col justify-between gap-3">
+            <div class="flex items-center justify-between">
+              <div class="text-lg sm:text-xl font-extrabold text-stone-900">大便</div>
+              <button id="btn-log-poop" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-stone-200/70 hover:bg-stone-300/80 border border-stone-300/80 text-stone-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer backdrop-blur-md shadow-xs transition">
+                <span>💩</span><span>紀錄</span>
+              </button>
+            </div>
+            <div id="stat-poop-count" class="text-2xl sm:text-3xl font-extrabold text-stone-800">0 次</div>
+          </div>
+
+        </div>
+
+        <!-- 第二行：罐頭與條條 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          
+          <!-- 3. 罐頭項目 -->
+          <div class="ios-glass-card rounded-[22px] p-4 flex flex-col justify-between gap-3">
+            <div class="flex items-center justify-between">
+              <div class="text-lg sm:text-xl font-extrabold text-amber-900">罐頭</div>
+              <button id="btn-log-eat" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-amber-200/60 hover:bg-amber-200/90 border border-amber-300/70 text-amber-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer backdrop-blur-md shadow-xs transition">
+                <span>🥫</span><span>紀錄</span>
+              </button>
+            </div>
+            <div id="stat-eat-count" class="text-2xl sm:text-3xl font-extrabold text-amber-600">0 罐</div>
+          </div>
+
+          <!-- 4. 條條項目 -->
+          <div class="ios-glass-card rounded-[22px] p-4 flex flex-col justify-between gap-3">
+            <div class="flex items-center justify-between">
+              <div class="text-lg sm:text-xl font-extrabold text-rose-900">條條</div>
+              <button id="btn-log-treat" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-rose-200/60 hover:bg-rose-200/90 border border-rose-300/70 text-rose-900 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer backdrop-blur-md shadow-xs transition">
+                <span>🍡</span><span>紀錄</span>
+              </button>
+            </div>
+            <div id="stat-treat-count" class="text-2xl sm:text-3xl font-extrabold text-rose-600">0 條</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 貓咪專屬每日備註與本月體重 (並排配置) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+        <!-- 每日備註 (佔 2 欄) -->
+        <div class="ios-glass-card rounded-[22px] p-3.5 space-y-2 md:col-span-2 flex flex-col justify-between">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+              <span>📝</span><span id="cat-note-title">每日備註</span>
+            </h3>
+            <span id="cat-note-status" class="text-[11px] text-emerald-600 font-semibold opacity-0 transition-opacity">已自動儲存</span>
+          </div>
+          <textarea id="cat-daily-note" rows="3" placeholder="輸入今日觀察、食慾、精神狀況或其他備註..." class="w-full text-sm px-3.5 py-3 rounded-xl border border-white/80 bg-white/65 focus:bg-white/90 focus:outline-none focus:ring-2 focus:ring-sky-400/40 resize-y transition"></textarea>
+        </div>
+
+        <!-- 右側直欄：餵藥與體重拆開成兩個獨立項目 -->
+        <div class="space-y-2.5 flex flex-col justify-between">
+          <!-- 餵藥卡片容器 -->
+          <div id="medication-section-container">
+            <div class="ios-glass-card rounded-[22px] p-3.5 space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                <span>💊</span><span>今日餵藥</span>
+              </h3>
+              <button id="btn-toggle-med" onclick="toggleMedication(state.activeTab)" class="btn-press w-full py-3 px-3.5 rounded-xl font-bold text-sm cursor-pointer transition flex flex-col items-center justify-center gap-0.5 shadow-xs bg-white text-slate-700 border border-slate-200">
+                <div class="flex items-center gap-1.5">
+                  <span id="med-icon">💊</span>
+                  <span id="med-text">未餵藥</span>
+                </div>
+                <span id="med-time-sub" class="text-[11px] font-normal text-slate-400"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 本月體重卡片 -->
+          <div class="ios-glass-card rounded-[22px] p-3.5 space-y-2">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                <span>⚖️</span><span>本月體重</span>
+              </h3>
+            </div>
+            <div class="flex items-center justify-between bg-white/60 px-3.5 py-2.5 rounded-xl border border-white/80 focus-within:ring-2 focus-within:ring-emerald-400/50 focus-within:bg-white/90 transition">
+              <input id="stat-weight-input" type="number" step="0.05" min="0.5" max="25" placeholder="輸入體重" class="w-full bg-transparent text-lg sm:text-xl font-extrabold text-slate-800 focus:outline-none" />
+              <span class="text-sm sm:text-base font-bold text-slate-500 ml-2 shrink-0">kg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- 底部版權宣告 -->
+  <footer class="py-3 text-center text-xs text-slate-400 font-medium mt-4">
+    貓咪日常生活紀錄 App © 2026 🐾 傻豹 🐾 豬仔包 🐾 牛牛
+  </footer>
+
+  <!-- ================= 彈窗區塊 ================= -->
+
+  <!-- 吃罐頭份量選擇彈窗 -->
+  <div id="eat-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🥫</span>
+          <div>
+            <h3 id="eat-modal-title" class="text-base font-bold text-stone-800">紀錄吃罐頭</h3>
+            <p class="text-[11px] text-stone-500">選擇份量並可輸入牌子</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2.5">
+        <button type="button" data-portion="0.25" data-label="1/4 罐" class="eat-portion-btn btn-press p-3 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">¼</span><span>1/4 罐</span>
+        </button>
+        <button type="button" data-portion="0.33" data-label="1/3 罐" class="eat-portion-btn btn-press p-3 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">⅓</span><span>1/3 罐</span>
+        </button>
+        <button type="button" data-portion="0.5" data-label="1/2 罐" class="eat-portion-btn btn-press p-3 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">½</span><span>1/2 罐</span>
+        </button>
+        <button type="button" data-portion="1.0" data-label="1 罐" class="eat-portion-btn btn-press p-3 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">1</span><span>1 罐</span>
+        </button>
+      </div>
+
+      <div class="space-y-2 pt-1 border-t border-stone-100">
+        <label class="text-xs font-medium text-stone-500 block">罐頭牌子（選填）：</label>
+        <input id="custom-eat-brand" type="text" placeholder="例如: K9 / 汪喵星球" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-amber-400" />
+      </div>
+
+      <div class="space-y-2">
+        <label class="text-xs font-medium text-stone-500 block">或輸入自訂罐數：</label>
+        <div class="flex items-center gap-2">
+          <input id="custom-eat-input" type="number" step="0.1" min="0.1" max="10" placeholder="例如: 0.75" class="flex-1 text-sm px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-amber-400" />
+          <button id="custom-eat-submit" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm transition cursor-pointer">
+            確定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 吃條條數量與牌子選擇彈窗 -->
+  <div id="treat-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🍡</span>
+          <div>
+            <h3 id="treat-modal-title" class="text-base font-bold text-stone-800">紀錄吃條條</h3>
+            <p class="text-[11px] text-stone-500">選擇數量並可輸入牌子</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2.5">
+        <button type="button" onclick="submitTreatRecord(1)" class="btn-press p-3 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">1</span><span>1 條</span>
+        </button>
+        <button type="button" onclick="submitTreatRecord(2)" class="btn-press p-3 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">2</span><span>2 條</span>
+        </button>
+        <button type="button" onclick="submitTreatRecord(3)" class="btn-press p-3 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-bold text-sm flex flex-col items-center gap-0.5 cursor-pointer">
+          <span class="text-lg">3</span><span>3 條</span>
+        </button>
+      </div>
+
+      <div class="space-y-2 pt-1 border-t border-stone-100">
+        <label class="text-xs font-medium text-stone-500 block">條條牌子（選填）：</label>
+        <input id="custom-treat-brand" type="text" placeholder="例如: CIAO / Inaba" class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-rose-400" />
+      </div>
+
+      <div class="space-y-2">
+        <label class="text-xs font-medium text-stone-500 block">或輸入自訂條數：</label>
+        <div class="flex items-center gap-2">
+          <input id="custom-treat-input" type="number" step="1" min="1" max="20" placeholder="例如: 4" class="flex-1 text-sm px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-rose-400" />
+          <button id="custom-treat-submit" type="button" class="btn-press px-4 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-sm transition cursor-pointer">
+            確定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 加糧紀錄彈窗 -->
+  <div id="dryfood-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🌾</span>
+          <div>
+            <h3 id="dryfood-modal-title" class="text-base font-bold text-stone-800">加糧</h3>
+            <p class="text-[11px] text-stone-500">快速選擇或輸入加糧 g 數目</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-3.5">
+        <div>
+          <label class="text-xs font-medium text-stone-500 block mb-2">快速加糧 (1g - 10g)</label>
+          <div class="grid grid-cols-5 gap-2">
+            <button type="button" onclick="quickSelectDryFood(1)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">1g</button>
+            <button type="button" onclick="quickSelectDryFood(2)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">2g</button>
+            <button type="button" onclick="quickSelectDryFood(3)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">3g</button>
+            <button type="button" onclick="quickSelectDryFood(4)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">4g</button>
+            <button type="button" onclick="quickSelectDryFood(5)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">5g</button>
+            <button type="button" onclick="quickSelectDryFood(6)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">6g</button>
+            <button type="button" onclick="quickSelectDryFood(7)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">7g</button>
+            <button type="button" onclick="quickSelectDryFood(8)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">8g</button>
+            <button type="button" onclick="quickSelectDryFood(9)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">9g</button>
+            <button type="button" onclick="quickSelectDryFood(10)" class="btn-press py-2.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-xs cursor-pointer">10g</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-medium text-stone-500 block mb-1">加糧克數 (g)</label>
+          <input id="custom-dryfood-input" type="number" min="1" max="1000" placeholder="例如: 50" class="w-full text-base font-bold px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-amber-400" />
+        </div>
+
+        <div>
+          <label class="text-xs font-medium text-stone-500 block mb-1">加糧時間</label>
+          <input id="dryfood-time-input" type="time" class="w-full text-base font-medium px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-amber-400" />
+        </div>
+
+        <button id="custom-dryfood-submit" type="button" class="btn-press w-full py-3.5 rounded-2xl ios-btn-amber font-extrabold text-base cursor-pointer mt-1 shadow-md">
+          確認儲存加糧
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 小便紀錄彈窗 -->
+  <div id="pee-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">💧</span>
+          <div>
+            <h3 id="pee-modal-title" class="text-base font-bold text-stone-800">紀錄小便</h3>
+            <p id="pee-modal-subtitle" class="text-[11px] text-stone-500">選擇小便狀況</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="pee-options-container" class="space-y-3">
+        <div id="normal-pee-group" class="grid grid-cols-3 gap-2.5">
+          <!-- 根據貓咪動態填入 (傻豹取消橙色，其餘保留) -->
+        </div>
+        <!-- 豬仔包專屬兩項選擇容器 -->
+        <div id="zhuzibao-pee-container" class="hidden space-y-3 pt-2 border-t border-stone-100">
+          <div>
+            <div class="text-xs font-medium text-slate-700 mb-1.5">1. 選擇顏色狀況：</div>
+            <div class="grid grid-cols-3 gap-2" id="zhuzibao-color-group">
+              <button type="button" data-z-color="正常" class="z-color-btn btn-press p-3.5 rounded-xl bg-sky-50 border border-sky-200 text-sky-900 font-extrabold text-sm text-center cursor-pointer">正常</button>
+              <button type="button" data-z-color="橙色" class="z-color-btn btn-press p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-extrabold text-sm text-center cursor-pointer">橙色</button>
+              <button type="button" data-z-color="紅色" class="z-color-btn btn-press p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-900 font-extrabold text-sm text-center cursor-pointer">紅色</button>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-medium text-rose-700 mb-1.5">2. 選擇血尿狀況：</div>
+            <div class="grid grid-cols-4 gap-2" id="zhuzibao-blood-group">
+              <button type="button" data-z-blood="滴血" class="z-blood-btn btn-press p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 font-extrabold text-xs text-center cursor-pointer">滴血</button>
+              <button type="button" data-z-blood="淺血" class="z-blood-btn btn-press p-3.5 rounded-xl bg-rose-100 border border-rose-300 text-rose-900 font-extrabold text-xs text-center cursor-pointer">淺血</button>
+              <button type="button" data-z-blood="深血" class="z-blood-btn btn-press p-3.5 rounded-xl bg-rose-700 text-white font-extrabold text-xs text-center cursor-pointer">深血</button>
+              <button type="button" data-z-blood="正常" class="z-blood-btn btn-press p-3.5 rounded-xl bg-sky-50 border border-sky-200 text-sky-900 font-extrabold text-xs text-center cursor-pointer">正常</button>
+            </div>
+          </div>
+          <button id="zhuzibao-pee-submit" type="button" disabled class="btn-press w-full py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-base cursor-pointer mt-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            確認儲存小便 (需選擇兩項)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 大便紀錄彈窗 -->
+  <div id="poop-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">💩</span>
+          <div>
+            <h3 id="poop-modal-title" class="text-base font-bold text-stone-800">紀錄大便</h3>
+            <p class="text-[11px] text-stone-500">選擇排便糞便狀態</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 gap-2.5">
+        <button type="button" data-poop-status="正常" class="poop-status-btn btn-press p-3.5 rounded-xl bg-stone-100 border border-stone-200 hover:bg-stone-200 text-stone-900 font-bold text-sm flex items-center justify-between cursor-pointer">
+          <span>💩 正常成型便</span>
+          <span class="text-xs opacity-70">健康</span>
+        </button>
+        <button type="button" data-poop-status="軟便" class="poop-status-btn btn-press p-3.5 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-bold text-sm flex items-center justify-between cursor-pointer">
+          <span>⚠️ 軟便</span>
+          <span class="text-xs opacity-70">注意消化</span>
+        </button>
+        <button type="button" data-poop-status="水" class="poop-status-btn btn-press p-3.5 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-bold text-sm flex items-center justify-between cursor-pointer">
+          <span>💦 水便 / 腹瀉</span>
+          <span class="text-xs opacity-70">需留意</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 每月體重紀錄彈窗 -->
+  <div id="weight-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/35 backdrop-blur-sm p-4">
+    <div class="bg-white/90 backdrop-blur-2xl w-full max-w-sm rounded-[26px] p-5 shadow-2xl border border-white/80 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">⚖️</span>
+          <div>
+            <h3 id="weight-modal-title" class="text-base font-bold text-stone-800">每月體重紀錄</h3>
+            <p class="text-[11px] text-stone-500">選擇月份與記錄體重</p>
+          </div>
+        </div>
+        <button onclick="closeAllModals()" type="button" class="p-1.5 rounded-xl text-stone-400 hover:text-stone-600 hover:bg-stone-100 transition cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-3.5">
+        <div>
+          <label class="text-xs font-medium text-stone-500 block mb-1.5">選擇月份</label>
+          <input id="weight-month-input" type="month" class="w-full text-sm font-medium px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-emerald-400" />
+        </div>
+
+        <div>
+          <label class="text-xs font-medium text-stone-500 block mb-1.5">體重 (kg)</label>
+          <div class="flex items-center gap-2.5">
+            <button id="weight-minus-btn" type="button" class="btn-press w-10 h-10 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-lg flex items-center justify-center cursor-pointer">-</button>
+            <input id="weight-val-input" type="number" step="0.05" min="0.5" max="25" class="flex-1 text-center text-lg font-bold px-3 py-2.5 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:border-emerald-400" />
+            <button id="weight-plus-btn" type="button" class="btn-press w-10 h-10 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-lg flex items-center justify-center cursor-pointer">+</button>
+          </div>
+          <!-- 快速增加按鈕選項 -->
+          <div class="grid grid-cols-4 gap-2 mt-2">
+            <button type="button" onclick="quickAddWeight(0.05)" class="btn-press py-2 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-xs cursor-pointer">+0.05</button>
+            <button type="button" onclick="quickAddWeight(0.1)" class="btn-press py-2 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-xs cursor-pointer">+0.1</button>
+            <button type="button" onclick="quickAddWeight(0.5)" class="btn-press py-2 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-xs cursor-pointer">+0.5</button>
+            <button type="button" onclick="quickAddWeight(1.0)" class="btn-press py-2 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 text-emerald-800 font-bold text-xs cursor-pointer">+1.0</button>
+          </div>
+        </div>
+
+        <button id="weight-save-btn" type="button" class="btn-press w-full py-3.5 rounded-2xl ios-btn-emerald font-bold text-sm cursor-pointer">
+          儲存體重紀錄
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示 Toast 訊息框 -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5 pointer-events-none"></div>
+
+  <!-- JavaScript 應用邏輯 -->
+  <script>
+    // 貓咪資料設定 (柔和低對比色系)
+    const CATS = [
+      { id: 'shabao', name: '傻豹', emoji: '🐆', themeColor: '#fb923c', bgGrad: 'from-amber-400/85 to-orange-400/85' },
+      { id: 'zhuzibao', name: '豬仔包', emoji: '🐷', themeColor: '#f472b6', bgGrad: 'from-pink-400/85 to-rose-400/85' },
+      { id: 'niuniu', name: '牛牛', emoji: '🐮', themeColor: '#818cf8', bgGrad: 'from-indigo-400/85 to-blue-400/85' }
+    ];
+
+    let state = {
+      activeTab: 'overview',
+      selectedDate: getTodayDateStr(),
+      records: {},
+      dailyEvents: {},
+      notes: {},
+      weights: {},
+      medications: {}
+    };
+
+    let editingDryFoodId = null;
+    let quickEditContext = { catId: null, type: null };
+    let currentModalCatId = null;
+    let selectedZhuzibaoColor = null;
+    let selectedZhuzibaoBlood = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadData();
+      initDatePicker();
+      initEventListeners();
+      render();
+    });
+
+    function getTodayDateStr() {
+      const d = new Date();
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    function getCurrentTimeStr() {
+      const d = new Date();
+      return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    }
+
+    function loadData() {
+      try {
+        const savedState = localStorage.getItem('3bro_cat_tracker_state_v3');
+        if (savedState) {
+          const parsed = JSON.parse(savedState);
+          state.records = parsed.records || {};
+          state.dailyEvents = parsed.dailyEvents || {};
+          state.notes = parsed.notes || {};
+          state.weights = parsed.weights || {};
+          state.medications = parsed.medications || {};
+        }
+      } catch (e) {
+        console.error('載入本機資料失敗', e);
+      }
+    }
+
+    function saveData() {
+      try {
+        localStorage.setItem('3bro_cat_tracker_state_v3', JSON.stringify({
+          records: state.records,
+          dailyEvents: state.dailyEvents,
+          notes: state.notes,
+          weights: state.weights,
+          medications: state.medications
+        }));
+      } catch (e) {
+        console.error('儲存本機資料失敗', e);
+      }
+    }
+
+    function showToast(message, icon = '✨') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'bg-stone-900/95 text-white px-5 py-3.5 rounded-2xl shadow-xl text-sm font-bold flex items-center gap-3 backdrop-blur-md animate-bounce pointer-events-auto transition-all';
+      toast.innerHTML = `<span>${icon}</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 2000);
+    }
+
+    function initDatePicker() {
+      const picker = document.getElementById('date-picker');
+      if (picker) {
+        picker.value = state.selectedDate;
+        picker.addEventListener('change', (e) => {
+          if (e.target.value) {
+            state.selectedDate = e.target.value;
+            render();
+          }
+        });
+      }
+    }
+
+    function switchTab(tabId) {
+      state.activeTab = tabId;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.dataset.tab === tabId) {
+          btn.className = 'tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap bg-white text-slate-900 shadow-md cursor-pointer';
+        } else {
+          btn.className = 'tab-btn flex-1 px-2 py-2 sm:px-5 sm:py-3 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap text-slate-700 hover:text-slate-900 cursor-pointer';
+        }
+      });
+      render();
+    }
+
+    function render() {
+      const overviewView = document.getElementById('overview-view');
+      const catView = document.getElementById('cat-view');
+
+      if (state.activeTab === 'overview') {
+        if (overviewView) overviewView.classList.remove('hidden');
+        if (catView) catView.classList.add('hidden');
+        renderOverview();
+      } else {
+        if (overviewView) overviewView.classList.add('hidden');
+        if (catView) catView.classList.remove('hidden');
+        renderCatView(state.activeTab);
+      }
+    }
+
+    function renderOverview() {
+      const dayRecords = state.records[state.selectedDate] || [];
+      const dryFoodRecs = dayRecords.filter(r => r.type === 'dryfood');
+      const totalDryGrams = dryFoodRecs.reduce((sum, r) => sum + (Number(r.grams) || 0), 0);
+
+      const drySummaryEl = document.getElementById('overview-dryfood-summary');
+      if (drySummaryEl) {
+        drySummaryEl.innerHTML = `今日總計：<span class="font-bold text-amber-600">${totalDryGrams}g</span>（共 ${dryFoodRecs.length} 次）`;
+      }
+
+      const dryListEl = document.getElementById('overview-dryfood-list');
+      if (dryListEl) {
+        if (dryFoodRecs.length === 0) {
+          dryListEl.innerHTML = `<div class="text-sm text-slate-400 italic py-1">今日尚無加糧紀錄，點擊右上角「加糧」按鈕快速新增。</div>`;
+        } else {
+          dryListEl.innerHTML = dryFoodRecs.map(r => `
+            <div class="frosted-pill flex items-center justify-between text-sm px-4 py-2.5 rounded-xl">
+              <div class="flex items-center gap-2.5 font-medium text-slate-700">
+                <span class="text-amber-600 font-bold">🌾 +${r.grams}g</span>
+                <span class="text-slate-400">(${r.time || '未記錄時間'})</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="editDryFoodItem('${r.id}')" class="px-3 py-1.5 bg-white/70 hover:bg-white rounded-xl text-slate-700 font-bold cursor-pointer transition text-sm border border-white/80 shadow-xs">編輯</button>
+                <button type="button" onclick="deleteRecord('${r.id}')" class="px-3 py-1.5 bg-rose-100/75 hover:bg-rose-200/80 rounded-xl text-rose-700 font-bold cursor-pointer transition text-sm border border-rose-200/60 shadow-xs">刪除</button>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      renderBathroomReminder(dayRecords);
+      renderOverviewCards(dayRecords);
+    }
+
+    function deleteRecord(recordId) {
+      if (!state.records[state.selectedDate]) return;
+      state.records[state.selectedDate] = state.records[state.selectedDate].filter(r => r.id !== recordId);
+      saveData();
+      showToast('已刪除紀錄', '🗑️');
+      render();
+    }
+
+    function renderBathroomReminder(dayRecords) {
+      const banner = document.getElementById('bathroom-reminder-banner');
+      if (!banner) return;
+
+      const hasPoop = dayRecords.some(r => r.type === 'poop');
+      const hasAbnormalPoop = dayRecords.some(r => r.type === 'poop' && ['水', '軟便'].includes(r.poopStatus));
+
+      if (hasAbnormalPoop) {
+        banner.className = 'frosted-pill rounded-[22px] p-3.5 transition-all bg-rose-100/45 border-rose-200/80 text-rose-800/90';
+        banner.innerHTML = `<div class="flex items-center gap-3"><span class="text-2xl">⚠️</span><div class="font-bold">注意：今日偵測到有貓咪出現軟便或水便，請密切留意糞便狀況與精神！</div></div>`;
+      } else if (!hasPoop) {
+        banner.className = 'frosted-pill rounded-[22px] p-3.5 transition-all bg-amber-100/45 border-amber-200/80 text-amber-800/90';
+        banner.innerHTML = `<div class="flex items-center gap-3"><span class="text-2xl">💡</span><div class="font-bold">溫馨提醒：今日尚無任何大便紀錄，請記得確認主子們排便狀況。</div></div>`;
+      } else {
+        banner.className = 'frosted-pill rounded-[22px] p-3.5 transition-all bg-emerald-100/45 border-emerald-200/80 text-emerald-800/90';
+        banner.innerHTML = `<div class="flex items-center gap-3"><span class="text-2xl">✨</span><div class="font-bold">太棒了！今日三貓皆已有正常排便紀錄，貓砂盆一切安好。</div></div>`;
+      }
+    }
+
+    function renderOverviewCards(dayRecords) {
+      const container = document.getElementById('overview-cards');
+      if (!container) return;
+
+      let htmlCards = CATS.map(cat => {
+        const catRecs = dayRecords.filter(r => r.catId === cat.id);
+        const peeRecs = catRecs.filter(r => r.type === 'pee');
+        const poopRecs = catRecs.filter(r => r.type === 'poop');
+
+        const hasBloodPee = peeRecs.some(r => ['滴血', '淺血', '深血', '紅色', '橙色'].includes(r.peeStatus));
+        const catNotes = state.notes[state.selectedDate] || {};
+        const dailyNote = catNotes[cat.id] || '';
+        const peeDetailsHtml = peeRecs.length > 0
+          ? `<div class="flex flex-wrap justify-center gap-1 mt-1">${peeRecs.map(r => {
+              const isAbnormal = ['滴血', '淺血', '深血', '紅色', '橙色'].includes(r.peeStatus);
+              return `<span class="text-[10px] px-1.5 py-0.5 rounded-md font-bold ${isAbnormal ? 'bg-rose-100 text-rose-700' : 'bg-sky-100 text-sky-700'}">${r.time || ''} ${r.peeStatus}</span>`;
+            }).join('')}</div>`
+          : '';
+
+        const dayMeds = state.medications[state.selectedDate] || {};
+        let medHtml = '';
+        if (cat.id === 'zhuzibao') {
+          const zMed = dayMeds[cat.id] || { morning: { given: false }, evening: { given: false } };
+          const mDone = zMed.morning && zMed.morning.given;
+          const eDone = zMed.evening && zMed.evening.given;
+          const allDone = mDone && eDone;
+          medHtml = `
+            <div class="frosted-pill ${allDone ? 'bg-emerald-100/45 border-emerald-200/80' : 'bg-purple-100/40 border-purple-200/75'} px-3.5 py-2.5 sm:py-3 rounded-2xl flex items-center justify-between text-sm sm:text-base font-bold">
+              <span class="${allDone ? 'text-emerald-800' : 'text-purple-800'}">💊 喂藥</span>
+              <div class="flex items-center gap-3 font-extrabold text-sm sm:text-base">
+                <span class="${mDone ? 'text-emerald-600' : 'text-slate-400'}">早 ${mDone ? '✓' : '✗'}</span>
+                <span class="${eDone ? 'text-emerald-600' : 'text-slate-400'}">晚 ${eDone ? '✓' : '✗'}</span>
+              </div>
+            </div>
+          `;
+        } else {
+          const medData = dayMeds[cat.id];
+          const isMedGiven = medData && (typeof medData === 'boolean' ? medData : medData.given);
+          medHtml = `
+            <div class="frosted-pill ${isMedGiven ? 'bg-emerald-100/45 border-emerald-200/80' : 'bg-purple-100/40 border-purple-200/75'} px-3.5 py-2.5 sm:py-3 rounded-2xl flex items-center justify-between text-sm sm:text-base font-bold">
+              <span class="${isMedGiven ? 'text-emerald-800' : 'text-purple-800'}">💊 喂藥</span>
+              <span class="font-extrabold text-sm sm:text-base ${isMedGiven ? 'text-emerald-600' : 'text-slate-400'}">${isMedGiven ? '已餵 ✓' : '未餵'}</span>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="ios-glass-card rounded-[24px] p-3 sm:p-3.5 flex flex-col justify-between h-full cursor-pointer hover:scale-[1.01] transition gap-2" onclick="switchTab('${cat.id}')">
+            <div class="flex items-center justify-start gap-1.5 sm:gap-2">
+              <span class="frosted-pill text-lg sm:text-2xl p-1 sm:p-1.5 rounded-xl shrink-0">${cat.emoji}</span>
+              <h4 class="text-lg sm:text-2xl font-extrabold text-slate-700 tracking-tight truncate">${cat.name}</h4>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="grid grid-cols-2 gap-1.5 text-xs sm:text-sm font-semibold">
+                <div class="frosted-pill ${hasBloodPee ? 'bg-rose-100/45 border-rose-200/80' : 'bg-sky-100/40 border-sky-200/75'} p-2 rounded-xl flex flex-col justify-center items-center text-center">
+                  <span class="${hasBloodPee ? 'text-rose-700/80' : 'text-sky-700/80'} text-[11px]">小便</span>
+                  <span class="text-base sm:text-lg font-extrabold ${hasBloodPee ? 'text-rose-600/90' : 'text-sky-600/90'} leading-tight">${peeRecs.length}次${hasBloodPee ? ' ⚠️' : ''}</span>
+                  ${peeDetailsHtml}
+                </div>
+                <div class="frosted-pill bg-stone-100/45 border-stone-200/75 p-2 rounded-xl flex flex-col justify-center items-center text-center">
+                  <span class="text-stone-600 text-[11px]">大便</span>
+                  <span class="text-base sm:text-lg font-extrabold text-stone-600 leading-tight">${poopRecs.length}次</span>
+                </div>
+              </div>
+              ${medHtml}
+            </div>
+
+            <div class="frosted-pill px-2.5 py-1.5 rounded-xl text-xs text-slate-700 italic line-clamp-2 text-left">
+              ${dailyNote ? dailyNote : '<span class="text-slate-400 not-italic">無備註</span>'}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 第四格：清潔廁所提醒卡片
+      htmlCards += `
+        <div class="ios-glass-card rounded-[24px] p-3 sm:p-3.5 flex flex-col justify-between h-full bg-gradient-to-br from-teal-50/50 to-emerald-50/45 gap-2">
+          <div class="flex items-center justify-start gap-2">
+            <span class="frosted-pill text-xl sm:text-2xl p-1.5 rounded-xl">🧹</span>
+            <h4 class="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">清潔廁所</h4>
+          </div>
+
+          <div class="flex flex-col items-center justify-center text-center my-auto py-1">
+            <div class="text-xl sm:text-2xl font-black text-teal-700">逢星期四</div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">洗砂盆、徹底換砂 🐾</div>
+          </div>
+
+          <div class="frosted-pill px-2.5 py-2 rounded-xl text-left text-[11px] sm:text-xs font-medium text-teal-800/90 space-y-1">
+            <div class="font-bold text-teal-900 flex items-center gap-1"><span>💡</span><span>溫馨提示</span></div>
+            <ul class="space-y-0.5 text-slate-600 leading-snug">
+              <li>• 每日早晚鏟屎，保持乾爽無異味</li>
+              <li>• 貓砂維持 3–5cm 厚度最舒適</li>
+              <li>• 洗盆後請徹底晾乾再倒新砂</li>
+            </ul>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = htmlCards;
+    }
+
+    function renderCatView(catId) {
+      const cat = CATS.find(c => c.id === catId);
+      if (!cat) return;
+
+      const headerCard = document.getElementById('cat-header-card');
+      headerCard.className = `rounded-[32px] p-6 text-white shadow-lg bg-gradient-to-r ${cat.bgGrad} flex flex-col sm:flex-row sm:items-center justify-between gap-5`;
+      document.getElementById('cat-header-emoji').textContent = cat.emoji;
+      document.getElementById('cat-header-name').textContent = cat.name;
+
+      const dayRecords = (state.records[state.selectedDate] || []).filter(r => r.catId === catId);
+      const eatRecs = dayRecords.filter(r => r.type === 'eat');
+      const treatRecs = dayRecords.filter(r => r.type === 'treat');
+      const peeRecs = dayRecords.filter(r => r.type === 'pee');
+      const poopRecs = dayRecords.filter(r => r.type === 'poop');
+
+      const totalEat = eatRecs.reduce((sum, r) => sum + (Number(r.canPortion) || 1), 0);
+      const totalTreat = treatRecs.reduce((sum, r) => sum + (Number(r.treatCount) || 1), 0);
+
+      let statusText = '一切正常 ✨';
+      const bloodPee = peeRecs.filter(r => ['滴血', '淺血', '深血'].includes(r.peeStatus));
+      const waterPoop = poopRecs.filter(r => ['水', '軟便'].includes(r.poopStatus));
+      if (bloodPee.length > 0) {
+        statusText = '⚠️ 注意：有血尿狀況';
+      } else if (waterPoop.length > 0) {
+        statusText = '⚠️ 注意：有軟便/水便';
+      } else if (peeRecs.length === 0 && poopRecs.length === 0) {
+        statusText = '尚無如廁紀錄';
+      }
+      document.getElementById('cat-header-status').textContent = statusText;
+
+      const eatListHtml = eatRecs.length > 0
+        ? `<div class="flex flex-wrap gap-2 mt-2">${eatRecs.map(r => {
+            return `<span class="inline-flex items-center gap-2 text-lg sm:text-xl pl-4 pr-3 py-2 rounded-2xl font-bold border bg-amber-50 border-amber-200 text-amber-900 shadow-xs">
+              <span>${r.time || ''} ${r.canLabel || (r.canPortion + ' 罐')}${r.brand ? ' - ' + r.brand : ''}</span>
+              <button type="button" onclick="deleteRecord('${r.id}')" class="ml-1 w-6 h-6 rounded-full hover:bg-black/10 flex items-center justify-center text-sm leading-none cursor-pointer" title="刪除紀錄">✕</button>
+            </span>`;
+          }).join('')}</div>`
+        : '';
+      document.getElementById('stat-eat-count').innerHTML = `${totalEat.toFixed(2)} 罐` + eatListHtml;
+      
+      const treatListHtml = treatRecs.length > 0
+        ? `<div class="flex flex-wrap gap-2 mt-2">${treatRecs.map(r => {
+            return `<span class="inline-flex items-center gap-2 text-lg sm:text-xl pl-4 pr-3 py-2 rounded-2xl font-bold border bg-rose-50 border-rose-200 text-rose-900 shadow-xs">
+              <span>${r.time || ''} ${r.treatCount} 條${r.brand ? ' - ' + r.brand : ''}</span>
+              <button type="button" onclick="deleteRecord('${r.id}')" class="ml-1 w-6 h-6 rounded-full hover:bg-black/10 flex items-center justify-center text-sm leading-none cursor-pointer" title="刪除紀錄">✕</button>
+            </span>`;
+          }).join('')}</div>`
+        : '';
+      document.getElementById('stat-treat-count').innerHTML = `${totalTreat} 條` + treatListHtml;
+
+      const peeListHtml = peeRecs.length > 0
+        ? `<div class="flex flex-wrap gap-2 mt-2">${peeRecs.map(r => {
+            const isAbnormal = ['滴血', '淺血', '深血', '紅色', '橙色'].includes(r.peeStatus);
+            return `<span class="inline-flex items-center gap-2 text-lg sm:text-xl pl-4 pr-3 py-2 rounded-2xl font-bold border ${isAbnormal ? 'bg-rose-50 border-rose-200 text-rose-700' : 'bg-sky-50 border-sky-200 text-sky-700'} shadow-xs">
+              <span>${r.time || ''} ${r.peeStatus}</span>
+              <button type="button" onclick="deleteRecord('${r.id}')" class="ml-1 w-6 h-6 rounded-full hover:bg-black/10 flex items-center justify-center text-sm leading-none cursor-pointer" title="刪除紀錄">✕</button>
+            </span>`;
+          }).join('')}</div>`
+        : '';
+      document.getElementById('stat-pee-count').innerHTML = `${peeRecs.length} 次` + peeListHtml;
+
+      const poopListHtml = poopRecs.length > 0
+        ? `<div class="flex flex-wrap gap-2 mt-2">${poopRecs.map(r => {
+            const isAbnormal = ['水', '軟便'].includes(r.poopStatus);
+            return `<span class="inline-flex items-center gap-2 text-lg sm:text-xl pl-4 pr-3 py-2 rounded-2xl font-bold border ${isAbnormal ? 'bg-amber-50 border-amber-200 text-amber-800' : 'bg-stone-100 border-stone-200 text-stone-700'} shadow-xs">
+              <span>${r.time || ''} ${r.poopStatus}</span>
+              <button type="button" onclick="deleteRecord('${r.id}')" class="ml-1 w-6 h-6 rounded-full hover:bg-black/10 flex items-center justify-center text-sm leading-none cursor-pointer" title="刪除紀錄">✕</button>
+            </span>`;
+          }).join('')}</div>`
+        : '';
+      document.getElementById('stat-poop-count').innerHTML = `${poopRecs.length} 次` + poopListHtml;
+
+      const currentMonth = state.selectedDate.slice(0, 7);
+      const catWeights = state.weights[catId] || {};
+      const currentWeight = catWeights[currentMonth];
+      const weightInputEl = document.getElementById('stat-weight-input');
+      if (weightInputEl) {
+        weightInputEl.value = currentWeight !== undefined ? currentWeight : '';
+      }
+
+      // 渲染餵藥按鈕狀態 (豬仔包分早上/晚上兩次，其他貓咪維持單次)
+      if (!state.medications[state.selectedDate]) {
+        state.medications[state.selectedDate] = {};
+      }
+      
+      const medContainer = document.getElementById('medication-section-container');
+      if (medContainer) {
+        if (catId === 'zhuzibao') {
+          const zhuzibaoMed = state.medications[state.selectedDate][catId] || { morning: { given: false, time: '' }, evening: { given: false, time: '' } };
+          const mGiven = zhuzibaoMed.morning && zhuzibaoMed.morning.given;
+          const mTime = zhuzibaoMed.morning && zhuzibaoMed.morning.time;
+          const eGiven = zhuzibaoMed.evening && zhuzibaoMed.evening.given;
+          const eTime = zhuzibaoMed.evening && zhuzibaoMed.evening.time;
+
+          medContainer.innerHTML = `
+            <div class="ios-glass-card rounded-[24px] p-5 space-y-3">
+              <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                <span>💊</span><span>今日餵藥</span>
+              </h3>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" onclick="toggleZhuzibaoMed('morning')" class="btn-press w-full py-3 px-3.5 rounded-xl font-bold text-sm cursor-pointer transition flex flex-col items-center justify-center gap-0.5 shadow-xs ${mGiven ? 'bg-sky-500 text-white border border-sky-400 hover:bg-sky-600' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'}">
+                  <div class="flex items-center gap-1.5">
+                    <span>🌅</span>
+                    <span>早上${mGiven ? ' 💊' : ''}</span>
+                  </div>
+                  <span class="text-[11px] font-normal ${mGiven ? 'text-sky-100' : 'text-slate-400'}">${mTime || '未記錄'}</span>
+                </button>
+                <button type="button" onclick="toggleZhuzibaoMed('evening')" class="btn-press w-full py-3 px-3.5 rounded-xl font-bold text-sm cursor-pointer transition flex flex-col items-center justify-center gap-0.5 shadow-xs ${eGiven ? 'bg-indigo-500 text-white border border-indigo-400 hover:bg-indigo-600' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'}">
+                  <div class="flex items-center gap-1.5">
+                    <span>🌙</span>
+                    <span>晚上${eGiven ? ' 💊' : ''}</span>
+                  </div>
+                  <span class="text-[11px] font-normal ${eGiven ? 'text-indigo-100' : 'text-slate-400'}">${eTime || '未記錄'}</span>
+                </button>
+              </div>
+            </div>
+          `;
+        } else {
+          const medData = state.medications[state.selectedDate][catId];
+          const isMedGiven = medData && (typeof medData === 'boolean' ? medData : medData.given);
+          const medTime = medData && typeof medData === 'object' ? medData.time : '';
+
+          medContainer.innerHTML = `
+            <div class="ios-glass-card rounded-[24px] p-5 space-y-2.5">
+              <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                <span>💊</span><span>今日餵藥</span>
+              </h3>
+              <button id="btn-toggle-med" onclick="toggleMedication('${catId}')" class="btn-press w-full py-3.5 px-4 rounded-2xl font-bold text-base cursor-pointer transition flex flex-col items-center justify-center gap-1 shadow-xs ${isMedGiven ? 'bg-sky-500 hover:bg-sky-600 text-white border border-sky-400' : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200'}">
+                <div class="flex items-center gap-1.5">
+                  <span>💊</span>
+                  <span>${isMedGiven ? '已餵藥 💊' : '未餵藥'}</span>
+                </div>
+                <span class="text-xs font-normal ${isMedGiven ? 'text-sky-100' : 'text-slate-400'}">${medTime ? '餵藥時間: ' + medTime : ''}</span>
+              </button>
+            </div>
+          `;
+        }
+      }
+
+      const noteTextarea = document.getElementById('cat-daily-note');
+      if (noteTextarea) {
+        if (!state.notes[state.selectedDate]) {
+          state.notes[state.selectedDate] = {};
+        }
+        if (noteTextarea.dataset.activeKey !== `${state.selectedDate}_${catId}`) {
+          noteTextarea.value = state.notes[state.selectedDate][catId] || '';
+          noteTextarea.dataset.activeKey = `${state.selectedDate}_${catId}`;
+        }
+        if (!noteTextarea.dataset.bound) {
+          noteTextarea.dataset.bound = 'true';
+          noteTextarea.addEventListener('input', () => {
+            if (!state.notes[state.selectedDate]) {
+              state.notes[state.selectedDate] = {};
+            }
+            state.notes[state.selectedDate][catId] = noteTextarea.value;
+            saveData();
+            const noteStatus = document.getElementById('cat-note-status');
+            if (noteStatus) {
+              noteStatus.style.opacity = '1';
+              setTimeout(() => { noteStatus.style.opacity = '0'; }, 1500);
+            }
+          });
+        }
+      }
+    }
+
+    function toggleMedication(catId) {
+      if (!state.medications[state.selectedDate]) {
+        state.medications[state.selectedDate] = {};
+      }
+      const currentVal = state.medications[state.selectedDate][catId];
+      const isCurrentlyGiven = currentVal && (typeof currentVal === 'boolean' ? currentVal : currentVal.given);
+
+      if (!isCurrentlyGiven) {
+        state.medications[state.selectedDate][catId] = {
+          given: true,
+          time: getCurrentTimeStr()
+        };
+        showToast('已標記為：已餵藥 💊', '💊');
+      } else {
+        state.medications[state.selectedDate][catId] = {
+          given: false,
+          time: ''
+        };
+        showToast('已標記為：未餵藥', '💊');
+      }
+      saveData();
+      render();
+    }
+
+    function toggleZhuzibaoMed(slot) {
+      if (!state.medications[state.selectedDate]) {
+        state.medications[state.selectedDate] = {};
+      }
+      if (!state.medications[state.selectedDate]['zhuzibao'] || typeof state.medications[state.selectedDate]['zhuzibao'] !== 'object' || (state.medications[state.selectedDate]['zhuzibao'].given !== undefined && typeof state.medications[state.selectedDate]['zhuzibao'].given === 'boolean')) {
+        state.medications[state.selectedDate]['zhuzibao'] = {
+          morning: { given: false, time: '' },
+          evening: { given: false, time: '' }
+        };
+      }
+      const zhuzibaoMed = state.medications[state.selectedDate]['zhuzibao'];
+      const slotData = zhuzibaoMed[slot] || { given: false, time: '' };
+
+      if (!slotData.given) {
+        zhuzibaoMed[slot] = {
+          given: true,
+          time: getCurrentTimeStr()
+        };
+        showToast(`豬仔包 ${slot === 'morning' ? '早上' : '晚上'}已標記為：已餵藥 💊`, '💊');
+      } else {
+        zhuzibaoMed[slot] = {
+          given: false,
+          time: ''
+        };
+        showToast(`豬仔包 ${slot === 'morning' ? '早上' : '晚上'}已標記為：未餵藥`, '💊');
+      }
+      saveData();
+      render();
+    }
+
+    function initEventListeners() {
+      const btnOverviewAddDry = document.getElementById('btn-overview-add-dryfood');
+      if (btnOverviewAddDry) {
+        btnOverviewAddDry.addEventListener('click', () => openDryFoodModal());
+      }
+
+      const btnLogEat = document.getElementById('btn-log-eat');
+      if (btnLogEat) {
+        btnLogEat.addEventListener('click', () => {
+          if (state.activeTab !== 'overview') openEatModal(state.activeTab);
+        });
+      }
+
+      const btnLogTreat = document.getElementById('btn-log-treat');
+      if (btnLogTreat) {
+        btnLogTreat.addEventListener('click', () => {
+          if (state.activeTab !== 'overview') openTreatModal(state.activeTab);
+        });
+      }
+
+      const btnLogPee = document.getElementById('btn-log-pee');
+      if (btnLogPee) {
+        btnLogPee.addEventListener('click', () => {
+          if (state.activeTab !== 'overview') openPeeModal(state.activeTab);
+        });
+      }
+
+      const btnLogPoop = document.getElementById('btn-log-poop');
+      if (btnLogPoop) {
+        btnLogPoop.addEventListener('click', () => {
+          if (state.activeTab !== 'overview') openPoopModal(state.activeTab);
+        });
+      }
+
+      const statWeightInput = document.getElementById('stat-weight-input');
+      if (statWeightInput) {
+        statWeightInput.addEventListener('input', (e) => {
+          if (state.activeTab === 'overview') return;
+          const currentMonth = state.selectedDate.slice(0, 7);
+          if (!state.weights[state.activeTab]) {
+            state.weights[state.activeTab] = {};
+          }
+          const val = parseFloat(e.target.value);
+          if (!isNaN(val) && val > 0) {
+            state.weights[state.activeTab][currentMonth] = val;
+            saveData();
+          } else if (e.target.value === '') {
+            delete state.weights[state.activeTab][currentMonth];
+            saveData();
+          }
+        });
+        statWeightInput.addEventListener('change', (e) => {
+          if (state.activeTab === 'overview') return;
+          const val = parseFloat(e.target.value);
+          if (!isNaN(val) && val > 0) {
+            showToast(`已儲存本月體重: ${val} kg`, '⚖️');
+          }
+        });
+      }
+
+      document.querySelectorAll('.eat-portion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const portion = parseFloat(btn.dataset.portion);
+          const label = btn.dataset.label;
+          const brand = document.getElementById('custom-eat-brand').value.trim();
+          addEatRecord(currentModalCatId, portion, label, brand);
+          document.getElementById('custom-eat-brand').value = '';
+          closeAllModals();
+        });
+      });
+      const customEatSubmit = document.getElementById('custom-eat-submit');
+      if (customEatSubmit) {
+        customEatSubmit.addEventListener('click', () => {
+          const val = parseFloat(document.getElementById('custom-eat-input').value);
+          const brand = document.getElementById('custom-eat-brand').value.trim();
+          if (!val || val <= 0) {
+            showToast('請輸入有效的罐頭份量', '⚠️');
+            return;
+          }
+          addEatRecord(currentModalCatId, val, `${val} 罐`, brand);
+          document.getElementById('custom-eat-input').value = '';
+          document.getElementById('custom-eat-brand').value = '';
+          closeAllModals();
+        });
+      }
+
+      const customTreatSubmit = document.getElementById('custom-treat-submit');
+      if (customTreatSubmit) {
+        customTreatSubmit.addEventListener('click', () => {
+          const val = parseInt(document.getElementById('custom-treat-input').value);
+          const brand = document.getElementById('custom-treat-brand').value.trim();
+          if (!val || val <= 0) {
+            showToast('請輸入有效的條條數量', '⚠️');
+            return;
+          }
+          submitTreatRecord(val, brand);
+          document.getElementById('custom-treat-input').value = '';
+          document.getElementById('custom-treat-brand').value = '';
+          closeAllModals();
+        });
+      }
+
+      const customDrySubmit = document.getElementById('custom-dryfood-submit');
+      if (customDrySubmit) {
+        customDrySubmit.addEventListener('click', () => {
+          const grams = parseInt(document.getElementById('custom-dryfood-input').value);
+          const timeVal = document.getElementById('dryfood-time-input').value || getCurrentTimeStr();
+          if (!grams || grams <= 0) {
+            showToast('請輸入有效的加糧 g 數目', '⚠️');
+            return;
+          }
+          if (editingDryFoodId) {
+            updateDryFoodItem(editingDryFoodId, grams, timeVal);
+          } else {
+            addDryFoodRecord(grams, timeVal);
+          }
+          document.getElementById('custom-dryfood-input').value = '';
+          closeAllModals();
+        });
+      }
+
+      document.querySelectorAll('.z-color-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.z-color-btn').forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-sky-600', 'bg-sky-200'));
+          btn.classList.add('ring-2', 'ring-offset-2', 'ring-sky-600', 'bg-sky-200');
+          selectedZhuzibaoColor = btn.dataset.zColor;
+          checkZhuzibaoPeeReady();
+        });
+      });
+
+      document.querySelectorAll('.z-blood-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.z-blood-btn').forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-rose-600', 'bg-rose-300'));
+          btn.classList.add('ring-2', 'ring-offset-2', 'ring-rose-600', 'bg-rose-300');
+          selectedZhuzibaoBlood = btn.dataset.zBlood;
+          checkZhuzibaoPeeReady();
+        });
+      });
+
+      const zhuzibaoPeeSubmit = document.getElementById('zhuzibao-pee-submit');
+      if (zhuzibaoPeeSubmit) {
+        zhuzibaoPeeSubmit.addEventListener('click', () => {
+          if (!selectedZhuzibaoColor || !selectedZhuzibaoBlood) {
+            showToast('請務必同時選擇顏色與血尿狀況兩項！', '⚠️');
+            return;
+          }
+          const combinedStatus = `${selectedZhuzibaoColor}・${selectedZhuzibaoBlood}`;
+          addPeeRecord('zhuzibao', combinedStatus);
+          closeAllModals();
+        });
+      }
+
+      document.querySelectorAll('.poop-status-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const status = btn.dataset.poopStatus;
+          addPoopRecord(currentModalCatId, status);
+          closeAllModals();
+        });
+      });
+
+      const weightMinus = document.getElementById('weight-minus-btn');
+      const weightPlus = document.getElementById('weight-plus-btn');
+      const weightInput = document.getElementById('weight-val-input');
+      if (weightMinus && weightInput) {
+        weightMinus.addEventListener('click', () => {
+          let val = parseFloat(weightInput.value) || 4.0;
+          val = Math.max(0.5, val - 0.05);
+          weightInput.value = val.toFixed(2);
+        });
+      }
+      if (weightPlus && weightInput) {
+        weightPlus.addEventListener('click', () => {
+          let val = parseFloat(weightInput.value) || 4.0;
+          val = Math.min(25, val + 0.05);
+          weightInput.value = val.toFixed(2);
+        });
+      }
+      const weightSaveBtn = document.getElementById('weight-save-btn');
+      if (weightSaveBtn) {
+        weightSaveBtn.addEventListener('click', () => {
+          const month = document.getElementById('weight-month-input').value;
+          const val = parseFloat(weightInput.value);
+          if (!month) {
+            showToast('請選擇月份', '⚠️');
+            return;
+          }
+          if (!val || val <= 0) {
+            showToast('請輸入有效的體重數值', '⚠️');
+            return;
+          }
+          saveWeightRecord(currentModalCatId, month, val);
+          closeAllModals();
+        });
+      }
+    }
+
+    function openEatModal(catId) {
+      currentModalCatId = catId;
+      const cat = CATS.find(c => c.id === catId);
+      document.getElementById('eat-modal-title').textContent = `紀錄吃罐頭 (${cat.name})`;
+      document.getElementById('custom-eat-brand').value = '';
+      document.getElementById('eat-modal').classList.remove('hidden');
+      document.getElementById('eat-modal').classList.add('flex');
+    }
+
+    function openTreatModal(catId) {
+      currentModalCatId = catId;
+      const cat = CATS.find(c => c.id === catId);
+      document.getElementById('treat-modal-title').textContent = `紀錄吃條條 (${cat.name})`;
+      document.getElementById('custom-treat-brand').value = '';
+      document.getElementById('treat-modal').classList.remove('hidden');
+      document.getElementById('treat-modal').classList.add('flex');
+    }
+
+    function submitTreatRecord(count, brand = '') {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId: currentModalCatId,
+        type: 'treat',
+        time: getCurrentTimeStr(),
+        treatCount: count,
+        brand
+      });
+      saveData();
+      showToast(`已成功紀錄條條 (+${count}條${brand ? ' - ' + brand : ''})`, '🍡');
+      closeAllModals();
+      render();
+    }
+
+    function openDryFoodModal() {
+      editingDryFoodId = null;
+      document.getElementById('dryfood-modal-title').textContent = '加糧';
+      document.getElementById('custom-dryfood-input').value = '';
+      document.getElementById('dryfood-time-input').value = getCurrentTimeStr();
+      document.getElementById('dryfood-modal').classList.remove('hidden');
+      document.getElementById('dryfood-modal').classList.add('flex');
+    }
+
+    function quickSelectDryFood(grams) {
+      document.getElementById('custom-dryfood-input').value = grams;
+    }
+
+    function editDryFoodItem(recordId) {
+      const dayRecords = state.records[state.selectedDate] || [];
+      const rec = dayRecords.find(r => r.id === recordId);
+      if (!rec) return;
+      editingDryFoodId = recordId;
+      document.getElementById('dryfood-modal-title').textContent = '編輯加糧紀錄';
+      document.getElementById('custom-dryfood-input').value = rec.grams;
+      document.getElementById('dryfood-time-input').value = rec.time || getCurrentTimeStr();
+      document.getElementById('dryfood-modal').classList.remove('hidden');
+      document.getElementById('dryfood-modal').classList.add('flex');
+    }
+
+    function openPeeModal(catId) {
+      currentModalCatId = catId;
+      const cat = CATS.find(c => c.id === catId);
+      document.getElementById('pee-modal-title').textContent = `紀錄小便 (${cat.name})`;
+      
+      const normalGroup = document.getElementById('normal-pee-group');
+      const zhuzibaoContainer = document.getElementById('zhuzibao-pee-container');
+
+      if (catId === 'zhuzibao') {
+        normalGroup.classList.add('hidden');
+        zhuzibaoContainer.classList.remove('hidden');
+        document.getElementById('pee-modal-subtitle').textContent = '豬仔包專屬：請同時選擇顏色與血尿狀況兩項';
+        selectedZhuzibaoColor = null;
+        selectedZhuzibaoBlood = null;
+        document.querySelectorAll('.z-color-btn').forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-sky-600', 'bg-sky-200'));
+        document.querySelectorAll('.z-blood-btn').forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-rose-600', 'bg-rose-300'));
+        const submitBtn = document.getElementById('zhuzibao-pee-submit');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = '確認儲存小便 (需選擇兩項)';
+        }
+      } else {
+        normalGroup.classList.remove('hidden');
+        zhuzibaoContainer.classList.add('hidden');
+        document.getElementById('pee-modal-subtitle').textContent = `${cat.name}：請選擇小便狀況`;
+        
+        // 傻豹取消橙色，只保留正常與紅色
+        if (catId === 'shabao') {
+          normalGroup.innerHTML = `
+            <button type="button" data-pee-status="正常" class="pee-status-btn btn-press p-4 rounded-xl bg-sky-50 border border-sky-200 hover:bg-sky-100 text-sky-900 font-extrabold text-base text-center cursor-pointer">
+              💧 正常
+            </button>
+            <button type="button" data-pee-status="紅色" class="pee-status-btn btn-press p-4 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-extrabold text-base text-center cursor-pointer">
+              🔴 紅色
+            </button>
+          `;
+          normalGroup.className = 'grid grid-cols-2 gap-2.5';
+        } else {
+          normalGroup.innerHTML = `
+            <button type="button" data-pee-status="正常" class="pee-status-btn btn-press p-4 rounded-xl bg-sky-50 border border-sky-200 hover:bg-sky-100 text-sky-900 font-extrabold text-base text-center cursor-pointer">
+              💧 正常
+            </button>
+            <button type="button" data-pee-status="橙色" class="pee-status-btn btn-press p-4 rounded-xl bg-amber-50 border border-amber-200 hover:bg-amber-100 text-amber-900 font-extrabold text-base text-center cursor-pointer">
+              🟠 橙色
+            </button>
+            <button type="button" data-pee-status="紅色" class="pee-status-btn btn-press p-4 rounded-xl bg-rose-50 border border-rose-200 hover:bg-rose-100 text-rose-900 font-extrabold text-base text-center cursor-pointer">
+              🔴 紅色
+            </button>
+          `;
+          normalGroup.className = 'grid grid-cols-3 gap-2.5';
+        }
+
+        normalGroup.querySelectorAll('.pee-status-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const status = btn.dataset.peeStatus;
+            addPeeRecord(currentModalCatId, status);
+            closeAllModals();
+          });
+        });
+      }
+
+      document.getElementById('pee-modal').classList.remove('hidden');
+      document.getElementById('pee-modal').classList.add('flex');
+    }
+
+    function checkZhuzibaoPeeReady() {
+      const submitBtn = document.getElementById('zhuzibao-pee-submit');
+      if (submitBtn) {
+        if (selectedZhuzibaoColor && selectedZhuzibaoBlood) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = `確認儲存小便 (${selectedZhuzibaoColor}・${selectedZhuzibaoBlood})`;
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.textContent = '確認儲存小便 (需選擇兩項)';
+        }
+      }
+    }
+
+    function openPoopModal(catId) {
+      currentModalCatId = catId;
+      const cat = CATS.find(c => c.id === catId);
+      document.getElementById('poop-modal-title').textContent = `紀錄大便 (${cat.name})`;
+      document.getElementById('poop-modal').classList.remove('hidden');
+      document.getElementById('poop-modal').classList.add('flex');
+    }
+
+    function openWeightModal(catId) {
+      currentModalCatId = catId;
+      const cat = CATS.find(c => c.id === catId);
+      document.getElementById('weight-modal-title').textContent = `每月體重紀錄 (${cat.name})`;
+      
+      const currentMonth = state.selectedDate.slice(0, 7);
+      document.getElementById('weight-month-input').value = currentMonth;
+      
+      const catWeights = state.weights[catId] || {};
+      const val = catWeights[currentMonth] !== undefined ? catWeights[currentMonth] : 4.0;
+      document.getElementById('weight-val-input').value = val.toFixed(2);
+
+      document.getElementById('weight-modal').classList.remove('hidden');
+      document.getElementById('weight-modal').classList.add('flex');
+    }
+
+    function quickAddWeight(delta) {
+      const weightInput = document.getElementById('weight-val-input');
+      if (weightInput) {
+        let val = parseFloat(weightInput.value) || 4.0;
+        val = Math.min(25, Math.max(0.5, val + delta));
+        weightInput.value = val.toFixed(2);
+      }
+    }
+
+    function addEatRecord(catId, portion, label, brand = '') {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId,
+        type: 'eat',
+        time: getCurrentTimeStr(),
+        canPortion: portion,
+        canLabel: label,
+        brand
+      });
+      saveData();
+      showToast(`已成功紀錄吃罐頭份量${brand ? ' (' + brand + ')' : ''}`, '🥫');
+      render();
+    }
+
+    function addTreatRecord(catId, count, brand = '') {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId,
+        type: 'treat',
+        time: getCurrentTimeStr(),
+        treatCount: count,
+        brand
+      });
+      saveData();
+      showToast(`已成功紀錄條條${brand ? ' (' + brand + ')' : ''}`, '🍡');
+      render();
+    }
+
+    function addPeeRecord(catId, peeStatus) {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId,
+        type: 'pee',
+        time: getCurrentTimeStr(),
+        peeStatus
+      });
+      saveData();
+      const isAbnormal = peeStatus !== '正常';
+      showToast(`已成功紀錄小便 (${peeStatus})`, isAbnormal ? '⚠️' : '💧');
+      render();
+    }
+
+    function addPoopRecord(catId, poopStatus) {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId,
+        type: 'poop',
+        time: getCurrentTimeStr(),
+        poopStatus
+      });
+      saveData();
+      showToast(`已成功紀錄大便 (${poopStatus})`, poopStatus !== '正常' ? '⚠️' : '💩');
+      render();
+    }
+
+    function addDryFoodRecord(grams, timeStr = getCurrentTimeStr()) {
+      if (!state.records[state.selectedDate]) {
+        state.records[state.selectedDate] = [];
+      }
+      state.records[state.selectedDate].push({
+        id: 'rec_' + Math.random().toString(36).substr(2, 9),
+        catId: 'global',
+        type: 'dryfood',
+        time: timeStr,
+        grams
+      });
+      saveData();
+      showToast(`已成功紀錄加糧 +${grams}g (${timeStr})`, '🌾');
+      render();
+    }
+
+    function updateDryFoodItem(recordId, newGrams, newTime = getCurrentTimeStr()) {
+      const dayRecords = state.records[state.selectedDate] || [];
+      const rec = dayRecords.find(r => r.id === recordId);
+      if (rec) {
+        rec.grams = newGrams;
+        rec.time = newTime;
+        saveData();
+        showToast('已更新加糧紀錄', '🌾');
+        render();
+      }
+    }
+
+    function saveWeightRecord(catId, monthStr, val) {
+      if (!state.weights[catId]) {
+        state.weights[catId] = {};
+      }
+      state.weights[catId][monthStr] = val;
+      saveData();
+      showToast(`已儲存 ${monthStr} 體重紀錄: ${val} kg`, '⚖️');
+      render();
+    }
+
+    function closeAllModals() {
+      document.querySelectorAll('.fixed.inset-0').forEach(modal => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+      editingDryFoodId = null;
+      render();
+    }
+  </script>
+</body>
+</html>
